@@ -4,6 +4,10 @@ A modern, real-time SQL Server monitoring and audit dashboard built with React a
 
 ![Dashboard Status](https://img.shields.io/badge/Status-Active-brightgreen) ![React](https://img.shields.io/badge/React-18.2.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue) ![Material--UI](https://img.shields.io/badge/Material--UI-5.x-blue) ![.NET](https://img.shields.io/badge/.NET-Core-purple)
 
+![GitHub stars](https://img.shields.io/github/stars/kumarsparkz/sql-server-audit-dashboard-web)
+![GitHub forks](https://img.shields.io/github/forks/kumarsparkz/sql-server-audit-dashboard-web)
+![GitHub issues](https://img.shields.io/github/issues/kumarsparkz/sql-server-audit-dashboard-web)
+![GitHub license](https://img.shields.io/github/license/kumarsparkz/sql-server-audit-dashboard-web)
 ## 🚀 Features
 
 ### 📊 Real-Time Dashboard
@@ -72,8 +76,8 @@ Before running this application, ensure you have:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/sql-server-audit-dashboard.git
-cd sql-server-audit-dashboard/Audit_ui
+git clone https://github.com/kumarsparkz/sql-server-audit-dashboard-web.git
+cd sql-server-audit-dashboard-web
 ```
 
 ### 2. Install Dependencies
