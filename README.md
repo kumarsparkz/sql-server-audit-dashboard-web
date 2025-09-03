@@ -1,8 +1,31 @@
-# SQL Server Audit Dashboard
+# SQL Server Audit Dashboard - Web Application
 
 A modern, real-time SQL Server monitoring and audit dashboard built with React and .NET Core. Monitor multiple SQL Server instances, track performance metrics, manage alerts, and review security events from a centralized web interface.
 
 ![Dashboard Status](https://img.shields.io/badge/Status-Active-brightgreen) ![React](https://img.shields.io/badge/React-18.2.0-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue) ![Material--UI](https://img.shields.io/badge/Material--UI-5.x-blue) ![.NET](https://img.shields.io/badge/.NET-Core-purple)
+
+[![GitHub stars](https://img.shields.io/github/stars/kumarsparkz/sql-server-audit-dashboard-web)](https://github.com/kumarsparkz/sql-server-audit-dashboard-web/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kumarsparkz/sql-server-audit-dashboard-web)](https://github.com/kumarsparkz/sql-server-audit-dashboard-web/network)
+[![GitHub issues](https://img.shields.io/github/issues/kumarsparkz/sql-server-audit-dashboard-web)](https://github.com/kumarsparkz/sql-server-audit-dashboard-web/issues)
+[![GitHub license](https://img.shields.io/github/license/kumarsparkz/sql-server-audit-dashboard-web)](https://github.com/kumarsparkz/sql-server-audit-dashboard-web/blob/main/LICENSE)
+
+## 🔗 Related Repositories
+
+This is the **frontend web application**. For the complete solution, you'll also need:
+
+- 🔧 **[Backend API](https://github.com/kumarsparkz/sql-server-audit-dashboard-api)** - .NET Core Web API with Entity Framework, SignalR, and JWT authentication
+- 📚 **[Documentation](https://github.com/kumarsparkz/sql-server-audit-dashboard-api/blob/main/README.md)** - API documentation and deployment guides
+
+### 🏗️ **Architecture Overview**
+```
+┌─────────────────────┐    HTTP/HTTPS     ┌──────────────────────┐
+│   React Frontend    │ ◄─────────────── │    .NET Core API     │
+│  (This Repository)  │                   │   (Backend Repo)     │
+└─────────────────────┘                   └──────────────────────┘
+         │                                           │
+         │ Real-time Updates                         │
+         └────────── SignalR ─────────────────────────┘
+```
 
 ## 🚀 Features
 
@@ -48,7 +71,7 @@ A modern, real-time SQL Server monitoring and audit dashboard built with React a
 - **Create React App** - Zero-configuration build tooling
 
 ### Backend
-- **.NET Core** - Cross-platform backend API
+- **.NET Core** - Cross-platform backend API ([Repository](https://github.com/kumarsparkz/sql-server-audit-dashboard-api))
 - **SQL Server** - Database monitoring and audit data storage
 - **SignalR** - Real-time web functionality (planned)
 - **Entity Framework Core** - Modern ORM for .NET
@@ -70,18 +93,48 @@ Before running this application, ensure you have:
 
 ## 🚀 Quick Start
 
-### 1. Clone the Repository
+### 1. Clone the Repositories
 ```bash
-git clone https://github.com/yourusername/sql-server-audit-dashboard.git
-cd sql-server-audit-dashboard/Audit_ui
+# Clone the frontend (this repository)
+git clone https://github.com/kumarsparkz/sql-server-audit-dashboard-web.git
+cd sql-server-audit-dashboard-web
+
+# Clone the backend API (separate repository)
+git clone https://github.com/kumarsparkz/sql-server-audit-dashboard-api.git
 ```
 
-### 2. Install Dependencies
+### 2. Backend Setup (API)
 ```bash
+# Navigate to the backend directory
+cd ../sql-server-audit-dashboard-api
+
+# Restore NuGet packages
+dotnet restore
+
+# Update connection strings in appsettings.json
+# Configure CORS for frontend URL (http://localhost:3000)
+
+# Run the backend API
+dotnet run
+```
+
+The backend API will start at `https://localhost:7001` (or the port shown in the console).
+
+### 3. Frontend Setup (Web)
+```bash
+# Navigate back to the frontend directory
+cd ../sql-server-audit-dashboard-web
+
+# Install dependencies
 npm install
+
+# Start the development server
+npm start
 ```
 
-### 3. Environment Configuration
+The frontend will open at `http://localhost:3000`.
+
+### 4. Environment Configuration
 
 Create a `.env` file in the root directory with your API configuration:
 
@@ -108,7 +161,7 @@ REACT_APP_DEFAULT_CHART_HOURS=24
 REACT_APP_MAX_CHART_POINTS=100
 ```
 
-### 4. Start the Development Server
+### 5. Start the Development Server
 ```bash
 npm start
 ```
@@ -685,8 +738,12 @@ Before submitting a feature request:
 
 1. **Fork the repository**:
    ```bash
-   git clone https://github.com/yourusername/sql-server-audit-dashboard.git
-   cd sql-server-audit-dashboard
+   # Fork the frontend repository
+   git clone https://github.com/yourusername/sql-server-audit-dashboard-web.git
+   cd sql-server-audit-dashboard-web
+   
+   # Also clone the backend for full-stack development
+   git clone https://github.com/kumarsparkz/sql-server-audit-dashboard-api.git
    ```
 
 2. **Create a feature branch**:
@@ -696,9 +753,15 @@ Before submitting a feature request:
 
 3. **Set up development environment**:
    ```bash
-   cd Audit_ui
+   # Frontend setup
+   cd sql-server-audit-dashboard-web
    npm install
    npm start
+   
+   # Backend setup (in separate terminal)
+   cd ../sql-server-audit-dashboard-api
+   dotnet restore
+   dotnet run
    ```
 
 #### Development Guidelines
@@ -792,22 +855,25 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ### 🐛 Reporting Issues
 
 For bug reports and feature requests:
-- **GitHub Issues**: [Create a new issue](https://github.com/yourusername/sql-server-audit-dashboard/issues)
-- **Email**: support@yourdomain.com (if applicable)
+- **GitHub Issues**: [Create a new issue](https://github.com/kumarsparkz/sql-server-audit-dashboard-web/issues)
+- **API Issues**: [Backend issues](https://github.com/kumarsparkz/sql-server-audit-dashboard-api/issues)
+- **Email**: kumarsparkz@gmail.com (if applicable)
 
 ### 💬 Community
 
 Join our community:
-- **GitHub Discussions**: Project discussions and Q&A
-- **Discord**: Real-time chat (if applicable)
+- **GitHub Discussions**: [Frontend Q&A](https://github.com/kumarsparkz/sql-server-audit-dashboard-web/discussions)
+- **GitHub Discussions**: [Backend Q&A](https://github.com/kumarsparkz/sql-server-audit-dashboard-api/discussions)
 - **Stack Overflow**: Tag questions with `sql-server-audit-dashboard`
 
 ### 📧 Contact Information
 
 For other inquiries:
-- **Project Maintainer**: [Your Name](mailto:your.email@domain.com)
-- **Organization**: Your Organization Name
-- **Website**: [https://your-website.com](https://your-website.com)
+- **Project Maintainer**: [kumarsparkz](mailto:kumarsparkz@gmail.com)
+- **GitHub Profile**: [https://github.com/kumarsparkz](https://github.com/kumarsparkz)
+- **Repositories**: 
+  - Frontend: [sql-server-audit-dashboard-web](https://github.com/kumarsparkz/sql-server-audit-dashboard-web)
+  - Backend: [sql-server-audit-dashboard-api](https://github.com/kumarsparkz/sql-server-audit-dashboard-api)
 
 ## 🙏 Acknowledgments
 
