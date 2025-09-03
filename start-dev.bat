@@ -1,0 +1,13 @@
+@echo off
+echo Starting React Development Server...
+echo.
+echo Navigating to project directory...
+cd /d "C:\Users\swamy\OneDrive\Projects\SQL_Server_Audit_Dashboard\Audit_ui"
+
+echo Setting up Node.js environment...
+set PATH=%PATH%;C:\Program Files\nodejs
+
+echo Starting development server...
+npm start
+
+pause
